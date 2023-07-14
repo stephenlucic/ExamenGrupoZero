@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block contenido %}
+{% load static %}
+
+<!-- Open Content -->
+<section class="bg-light">
+    
+    <div class="container pb-5">
+        <div class="row">
+            
+            <div class="col-lg-5 mt-5">
+                <div class="card mb-3">
+                    {% if o.foto %}
+                    <img class="card-img img-fluid" src="{{o.foto.url}}" alt="Card image cap" id="product-detail">
+                    {% else %}
+                    
+                    <img class="card-img img-fluid" src="" alt="Card image cap" id="product-detail">
+                    {% endif %}
+                </div>
+                
+            </div>
+            <!-- col end -->
+            <div class="col-lg-7 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="h2">{{o.nombre}}</h1>
+                        <p class="h3 py-2">{{o.precio}}</p>
+                    
+                        
+
+                        <h6>Descripción:</h6>
+                        <p>{{o.descripcion}}</p>
+                        
+
+                        
+
+                        <form action="" method="GET">
+                            <input type="hidden" name="product-title" value="Activewear">
+                            <div class="row pb-3">
+                                <div class="col d-grid">
+                                    <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Comprar</button>
+                                </div>
+                                
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</section>
+<!-- Close Content -->
+
+{% endblock %}

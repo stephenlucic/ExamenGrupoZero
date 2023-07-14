@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block contenido %}
+{% load static %}
+
+<!-- Open Content -->
+<section class="bg-light">
+    {%for a in mis_artistas %}
+    <div class="container pb-5">
+        <div class="row">
+            
+            <div class="col-lg-5 mt-5">
+                <div class="card mb-3">
+                    {% if a.foto %}
+                    <img class="card-img img-fluid" src="{{a.foto.url}}" alt="Card image cap" id="product-detail">
+                    {% else %}
+                    
+                    <img class="card-img img-fluid" src="" alt="Card image cap" id="product-detail">
+                    {% endif %}
+                </div>
+                
+            </div>
+            <!-- col end -->
+            <div class="col-lg-7 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="h2">{{a.nombre}}</h1>
+                        <p class="h3 py-2">{{a.precio}}</p>
+                    
+                        
+
+                        <h6>Descripción:</h6>
+                        <p>{{a.descripcion}}</p>
+                        
+
+                        
+
+                    
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    {% endfor %}
+</section>
+<!-- Close Content -->
+
+{% endblock %}

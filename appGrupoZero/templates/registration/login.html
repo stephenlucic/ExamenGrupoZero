@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block contenido %}
+
+
+<!-- Start Contact -->
+<div class="container py-5">
+    <div class="row py-5">
+        <div class="text-center">
+            <h2>Login</h2>
+        </div>
+        
+        <form id="formularioLogin" action="" method="POST">
+            {% csrf_token %}
+            {{form | crispy }}
+            <button type="submit" class="btn btn-success btn-lg px-3">Iniciar sesion</button>
+            
+        </form>
+    </div>
+</div>
+
+{% endblock %}

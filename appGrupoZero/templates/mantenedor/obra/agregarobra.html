@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block contenido %}
+
+
+<!-- Start Contact -->
+<div class="container py-5">
+    <div class="row py-5">
+        <div class="text-center">
+            <h2>Agregar Obra</h2>
+        </div>
+        {{mensaje}}
+        <h2>Agregar</h2>
+        <form id="formularioAgregar" action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form_obra | crispy }}
+            <button type="submit" class="btn btn-success btn-lg px-3">Agregar</button>
+            <button type="reset" class="btn btn-danger btn-lg px-3">Limpiar</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
